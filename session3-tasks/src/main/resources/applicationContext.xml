@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- Define your beans here -->
+
+
+
+
+
+        <bean id="draw2d" class="org.example.task1.Draw2d">
+
+        </bean>
+    <bean id="draw3d" class="org.example.task1.Draw3d">
+
+    </bean>
+
+    <bean id="circle2" class="org.example.task1.Circle">
+        <constructor-arg ref="draw2d"></constructor-arg>
+        <constructor-arg ref="draw3d"></constructor-arg>
+    </bean>
+    <bean id="square" class="org.example.task1.Square">
+        <property name="draw2d" ref="draw2d"></property>
+        <property name="draw3d" ref="draw3d"></property>
+    </bean>
+
+
+    <context:property-placeholder location="classpath:application.properties"/>
+    <bean id="dataConfig" class="org.example.task2.DatabaseConfig">
+        <property name="url" value="${database.url}"></property>
+        <property name="password" value="${database.password}"></property>
+        <property name="userName" value="${database.username}"></property>
+    </bean>
+    <bean id="car" class="org.example.task2.Car">
+        <constructor-arg ref="dataConfig"></constructor-arg>
+    </bean>
+    <bean id="plate" class="org.example.task2.Plate">
+        <constructor-arg ref="dataConfig"></constructor-arg>
+    </bean>
+
+
+
+</beans>
+
+
+
+
+
