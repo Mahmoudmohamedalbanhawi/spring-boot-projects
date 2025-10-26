@@ -1,0 +1,11 @@
+h1
+{
+    color: red;
+}
+
+
+.error {
+    color: red !important;
+    font-size: 12px;
+    font-style: italic;
+}
