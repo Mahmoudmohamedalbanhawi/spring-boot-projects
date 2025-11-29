@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "Product API",
+    "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+    "description": "Postman collection for Product CRUD and Search APIs using {{baseUrl}} variable",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productName\": \"Laptop\",\n  \"productDetails\": {\n    \"name\": \"Laptop Pro\",\n    \"manufacturer\": \"BrandX\",\n    \"price\": 1500.0,\n    \"expirationDate\": \"2026-12-31\",\n    \"available\": true\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/product",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","product"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Product by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","product","1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productName\": \"Laptop Updated\",\n  \"productDetails\": {\n    \"name\": \"Laptop Pro 2026\",\n    \"manufacturer\": \"BrandX\",\n    \"price\": 1600.0,\n    \"expirationDate\": \"2026-12-31\",\n    \"available\": true\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/product/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","product","1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","product","1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/product/search?query=laptop",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","product","search"],
+          "query": [
+            { "key": "query", "value": "laptop" }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -30,7 +30,7 @@ public class ProductService  {
     }
     @Transactional
     public void deleteProduct(int id) {
-        this.productDAO.deleteProductById(id);
+         this.productDAO.deleteProductById(id);
     }
 
     @Transactional
