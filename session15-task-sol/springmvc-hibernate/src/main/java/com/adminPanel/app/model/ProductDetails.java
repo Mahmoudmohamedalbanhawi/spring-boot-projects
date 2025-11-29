@@ -1,5 +1,7 @@
 package com.adminPanel.app.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,6 +44,7 @@ public class ProductDetails {
     private boolean available;
     @OneToOne
     @JoinColumn(name = "product_id")
+    @JsonBackReference
     private Product product;
 
 }

@@ -44,6 +44,10 @@
             </props>
         </property>
     </bean>
+    <bean id="swagger2Config" class="springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration">
+
+    </bean>
+    <mvc:default-servlet-handler/>
 
     <!-- Transaction Manager -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">

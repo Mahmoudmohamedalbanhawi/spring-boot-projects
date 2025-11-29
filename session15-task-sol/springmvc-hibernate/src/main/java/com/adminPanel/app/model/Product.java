@@ -1,5 +1,6 @@
 package com.adminPanel.app.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class Product {
 
     @OneToOne(mappedBy = "product" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @Valid
+    @JsonManagedReference
     private ProductDetails productDetails;
 
 }

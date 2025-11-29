@@ -46,6 +46,7 @@ public class ProductDAO  {
         {
             session.delete(product);
         }
+
     }
     public void saveOrUpdate(Product product) {
         Session session = sessionFactory.getCurrentSession();
